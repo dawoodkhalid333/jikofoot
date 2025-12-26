@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* JikoFoot Design System - Bold Sports Aesthetic */
+
+@layer base {
+  :root {
+    /* Core palette - Green (pitch) and Gold (success) */
+    --background: 160 15% 6%;
+    --foreground: 45 100% 96%;
+
+    --card: 160 20% 10%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 160 20% 10%;
+    --popover-foreground: 45 100% 96%;
+
+    /* Primary: Rich Gold */
+    --primary: 45 100% 50%;
+    --primary-foreground: 160 15% 6%;
+
+    /* Secondary: Deep Green */
+    --secondary: 142 40% 20%;
+    --secondary-foreground: 45 100% 96%;
+
+    /* Muted: Dark greens */
+    --muted: 160 20% 15%;
+    --muted-foreground: 160 10% 60%;
+
+    /* Accent: Bright emerald */
+    --accent: 142 70% 45%;
+    --accent-foreground: 160 15% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 160 30% 18%;
+    --input: 160 30% 18%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gold: 45 100% 50%;
+    --gold-light: 45 100% 65%;
+    --gold-dark: 40 100% 40%;
+    --pitch-green: 142 70% 45%;
+    --pitch-dark: 142 40% 20%;
+    --stadium-dark: 160 15% 6%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 50%), hsl(40 100% 40%));
+    --gradient-pitch: linear-gradient(180deg, hsl(142 40% 20%), hsl(160 15% 6%));
+    --gradient-hero: linear-gradient(135deg, hsl(160 15% 6% / 0.95), hsl(142 40% 20% / 0.8));
+    --gradient-card: linear-gradient(180deg, hsl(160 20% 12%), hsl(160 20% 8%));
+    
+    /* Shadows */
+    --shadow-gold: 0 4px 30px hsl(45 100% 50% / 0.3);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 60px hsl(45 100% 50% / 0.2);
+  }
+
+  .dark {
+    /* Same as root - dark theme by default */
+    --background: 160 15% 6%;
+    --foreground: 45 100% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-pitch {
+    background-image: var(--gradient-pitch);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulseGold 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 20px hsl(45 100% 50% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(45 100% 50% / 0.5); }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
