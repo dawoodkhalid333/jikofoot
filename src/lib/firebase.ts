@@ -11,12 +11,12 @@ import {
 
 // Firebase configuration - these are publishable keys
 const firebaseConfig = {
-  apiKey: "AIzaSyC-LQ8j23J9BnCa0Rzu0lFJjruAYktdPiQ",
-  authDomain: "jikofoot-98797.firebaseapp.com",
-  projectId: "jikofoot-98797",
-  storageBucket: "jikofoot-98797.firebasestorage.app",
-  messagingSenderId: "939981908434",
-  appId: "1:939981908434:web:a7a1b06caef799aea8400b",
+  apiKey: "AIzaSyB99wp57FDQn3OyjtpUv8WgZ_GwOasxrto",
+  authDomain: "jikofoot-10ab8.firebaseapp.com",
+  projectId: "jikofoot-10ab8",
+  storageBucket: "jikofoot-10ab8.firebasestorage.app",
+  messagingSenderId: "839081007592",
+  appId: "1:839081007592:web:1012d3ab7cacdb5e4c6c5d",
 };
 
 // Initialize Firebase only if config is provided
@@ -189,7 +189,7 @@ export async function fetchSiteContent(): Promise<SiteContent> {
 
   try {
     const contentDoc = await getDoc(
-      doc(db, "siteContent", "FYqrvj8wJPdqL8ZIZf9r")
+      doc(db, "siteContent", "GCQ0O3NstV4p1xxmYAqo")
     );
     console.log(contentDoc.data());
     if (contentDoc.exists()) {
